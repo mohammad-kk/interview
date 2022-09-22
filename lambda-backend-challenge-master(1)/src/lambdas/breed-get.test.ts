@@ -13,8 +13,7 @@ describe('breed-get handler', () => {
         return mockPayload
       },
     })
-  })
-``
+  })``
   it('returns payload from fetch request', async () => {
     const response = await handler()
     expect(response).toMatchObject({ body: mockPayload })

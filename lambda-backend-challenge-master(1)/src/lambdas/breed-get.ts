@@ -10,7 +10,7 @@ interface ErrorResponse extends Response {
 }
 
 interface BreedApi {
-  message: string []
+  message: string[]
   status: string
 }
 
@@ -21,17 +21,16 @@ export async function handler(): Promise<RandomResponse | ErrorResponse> {
 
     const payload: BreedApi = {
       message: [],
-      status: "200"
-    };
-    Object.keys(temp).forEach(function(key){
-      payload.message.push(`${key}: ${temp[key]}`);
-    });
+      status: '200',
+    }
+    Object.keys(temp).forEach(function (key) {
+      payload.message.push(`${key}: ${temp[key]}`)
+    })
 
     return {
       statusCode: 200,
       body: payload,
     }
-
   } catch (err: unknown) {
     return {
       statusCode: 500,
